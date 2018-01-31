@@ -5,13 +5,23 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 public class ResultatActivity extends AppCompatActivity {
+
+    private TextView text;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resultat);
+
+        text= findViewById(R.id.textView);
+        Bundle b = getIntent().getExtras();
+
+        if (b != null) {
+            text.setText(b.get("value").toString());
+        }
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

@@ -1,5 +1,6 @@
 package fr.iutamiens.lakraao.calculatrice;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -9,5 +10,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        resultat();
+    }
+    private void resultat(){
+        Intent intent = new Intent(this, ResultatActivity.class);
+        intent.putExtra("value", "test");
+        startActivity(intent);
     }
 }
